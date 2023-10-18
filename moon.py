@@ -1,7 +1,15 @@
-import pyautogui
+import pyautogui 
+#what is pyautogui?
+#used to programmatically control the mouse and key board
 import pyttsx3
+#what is pyttsx3?
+#used for text to speech
 import speech_recognition as sr
+#what is speechrecognition?
+#recogniser records our voice
 import pyaudio
+#what is pyaudio?
+#to play and record audio
 import datetime
 import os
 from AppOpener import open
@@ -16,14 +24,16 @@ import requests
 import pywikihow
 import winsound
 
+#>>..First to  create an base engine -- audio(voice) ---  VOIce ASSistant --- speak --- listen
+
+#N>>create an engine,engine that creates its base of voice 
 
 
-
-engine = pyttsx3.init("sapi5")
+engine = pyttsx3.init("sapi5") #what is sapi5 = microsoft speech API  voices
 voices = engine.getProperty('voices')
 engine.setProperty('voices', voices[0].id)
 engine.setProperty('rate',180)
-
+#>>> to speak defining function
 
 def speak(audio):
     engine.say(audio)
